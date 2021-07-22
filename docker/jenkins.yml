@@ -35,6 +35,18 @@ credentials:
           id: "npm-login"
           scope: GLOBAL
           secret: ${/mgmt/npm_token}
+      - string:
+          id: "github-gpg-key"
+          scope: GLOBAL
+          secret: ${/mgmt/github/gpg/key}
+      - string:
+          id: "github-gpg-passphrase"
+          scope: GLOBAL
+          secret: ${/mgmt/github/gpg/passphrase}
+      - string:
+          id: "github-gpg-key-id"
+          scope: GLOBAL
+          secret: ${/mgmt/github/gpg/id}
 jenkins:
   securityRealm:
     github:

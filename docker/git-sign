@@ -1,0 +1,7 @@
+#!/bin/bash
+echo -e "$GPG_KEY" | gpg --batch --import
+git config user.signingkey $GPG_KEY_ID
+echo $GPG_KEY_ID:6: | gpg --import-ownertrust
+git commit -S -m "$1"
+gpg --passphrase-fd 0 --batch --delete-secret-keys --pinentry-mode loopback --yes $GPG_KEY_ID
+gpg --passphrase-fd 0 --batch --delete-keys --pinentry-mode loopback --yes $GPG_KEY_ID
