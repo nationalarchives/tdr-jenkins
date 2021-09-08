@@ -31,6 +31,10 @@ credentials:
           id: "npm-login"
           scope: GLOBAL
           secret: ${/mgmt/npm_token}
+      - string:
+          id: "slack-release-channel"
+          scope: GLOBAL
+          secret: ${/mgmt/release/slack/webhook}
 jenkins:
   securityRealm:
     github:
